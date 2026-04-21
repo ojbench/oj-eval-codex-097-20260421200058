@@ -12,11 +12,8 @@ Assume no duplicates. Build BST from level-order array (complete representation 
 Then return cnt-th largest (1-indexed), i.e., do reverse in-order traversal and pick k-th.
 */
 
-struct Node {
-    int val;
-    Node *left, *right;
-    Node(int v): val(v), left(nullptr), right(nullptr) {}
-};
+// Note: We do not need to build the BST. The k-th largest value in a BST
+// equals the k-th largest among the set of node values.
 
 int main() {
     ios::sync_with_stdio(false);
@@ -102,8 +99,7 @@ int main() {
     int ans = arr[targetIndex];
     // But nth_element gives ascending order position; to ensure correct element, we need the (n-k)th smallest which equals k-th largest.
     // Print answer
-    cout << ans;
+    cout << ans << '\n';
     if (cout.good()) {}
     return 0;
 }
-
